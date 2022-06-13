@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ASAP-deployment
+  labels:
+    app: ASAP
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ASAP
+  template:
+    metadata:
+      labels:
+        app: ASAP
+    spec:
+      containers:
+      - name: web-app
+        image: 
+        ports:
+        - containerPort: 8050

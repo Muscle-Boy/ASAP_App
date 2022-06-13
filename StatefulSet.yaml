@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongoDB-StatefulSet
+spec:
+  selector:
+    matchLabels:
+      app: mongoDB      # has to match .spec.template.metadata.labels
+  serviceName: mongoDB-headless-svc
+  replicas: 3         # by default is 1
+  #minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: mongoDB    # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: mongoDB-app
+        image: ...
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: local-persistent-volume
+          mountPath: /usr/share/nginx/html    # CHANGE
+      volumes:
+      - name: local-persistent-volume
+        persistentVolumeClaim:
+          claimName: my-claim
+  
