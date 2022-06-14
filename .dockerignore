@@ -1,6 +1,6 @@
 Dockerfile
-YAML_Files
-Tensorflow/community
-Tensorflow/official
-Tensorflow/orbit
-Tensorflow/tensorflow_models
+YAML_Files/*
+Tensorflow/community/*
+Tensorflow/official/*
+Tensorflow/orbit/*
+Tensorflow/tensorflow_models/*
