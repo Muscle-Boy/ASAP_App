@@ -277,8 +277,8 @@ def image_processing(image):
 
 #--------------------------------------------------------------------------------------------------------------
 # ADD ENVIRONMENT PATH:
-os.environ['Path']+='/app/Tensorflow/research'
-sys.path.append('/app/Tensorflow/research')
+# os.environ['Path']+='/app/Tensorflow/research'
+# sys.path.append('/app/Tensorflow/research')
 
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as viz_utils
