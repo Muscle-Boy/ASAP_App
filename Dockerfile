@@ -14,4 +14,6 @@ RUN pip install opencv-python
 
 RUN pip install -r requirements.txt
 
-CMD gunicorn --bind 0.0.0.0:8050 --workers=3 --threads=8 app-copy:server
+ENV PYTHONPATH "${PYTHONPATH}:/app/Tensorflow/research"
+
+CMD gunicorn --bind 0.0.0.0:8050 --workers=3 --threads=8 --timeout=120 app-copy:server
