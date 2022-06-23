@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongoDB-headless-svc
+  name: mongodb-headless-svc
 spec:
   clusterIP: None
   selector:
-    app: mongoDB
+    app: mongodb
   ports:
     - protocol: TCP
       port: 27017
