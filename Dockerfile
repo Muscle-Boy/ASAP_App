@@ -16,4 +16,4 @@ RUN pip install -r requirements.txt
 
 ENV PYTHONPATH "${PYTHONPATH}:/app/Tensorflow/research"
 
-CMD gunicorn --bind 0.0.0.0:8050 --workers=3 --threads=8 --timeout=600 app-copy:server
+CMD gunicorn --bind 0.0.0.0:8050 --workers=3 --threads=8 --timeout=0 app-copy:server
