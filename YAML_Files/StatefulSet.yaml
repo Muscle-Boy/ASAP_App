@@ -5,24 +5,24 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: mongoDB      # has to match .spec.template.metadata.labels
-  serviceName: mongoDB-headless-svc
+      app: mongodb      # has to match .spec.template.metadata.labels
+  serviceName: mongodb-headless-svc
   replicas: 3         # by default is 1
   #minReadySeconds: 10 # by default is 0
   template:
     metadata:
       labels:
-        app: mongoDB    # has to match .spec.selector.matchLabels
+        app: mongodb    # has to match .spec.selector.matchLabels
     spec:
       terminationGracePeriodSeconds: 10
       containers:
-      - name: mongoDB-app
-        image: ...
+      - name: mongodb-app
+        image: mongo
         ports:
         - containerPort: 27017
         volumeMounts:
         - name: local-persistent-volume
-          mountPath: /usr/share/nginx/html    # CHANGE
+          mountPath: /data/db    # CHANGE
       volumes:
       - name: local-persistent-volume
         persistentVolumeClaim:
