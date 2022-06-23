@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ASAP-deployment
+  name: asap-deployment
   labels:
-    app: ASAP
+    app: asap
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ASAP
+      app: asap
   template:
     metadata:
       labels:
-        app: ASAP
+        app: asap
     spec:
       containers:
       - name: web-app
-        image: 
+        image: ryanangweihao/rang012_docker_repository:main-171ab15
         ports:
         - containerPort: 8050
