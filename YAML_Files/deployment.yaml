@@ -19,3 +19,5 @@ spec:
         image: ryanangweihao/rang012_docker_repository:main-171ab15
         ports:
         - containerPort: 8050
+      imagePullSecrets:
+      - name: regcred
