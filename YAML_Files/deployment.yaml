@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: ryanangweihao/rang012_docker_repository:main-10b84bc
+        image: ryanangweihao/rang012_docker_repository:main-a9523f6
         ports:
         - containerPort: 8050
       imagePullSecrets:
