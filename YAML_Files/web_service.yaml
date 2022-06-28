@@ -9,3 +9,4 @@ spec:
     - protocol: TCP
       port: 80      # Use port 80 to connect with INGRESS!
       targetPort: 8050
+  type: LoadBalancer
